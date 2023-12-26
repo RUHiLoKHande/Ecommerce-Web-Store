@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Demo styles -->
+  <style>
+    .navbar {
+        background-color: #f2f2f2;
+            overflow: hidden;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+    }
+
+    .navbar a {
+        text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            padding: 10px 15px;;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .logo img {
+      width: 120px;
+      margin-left: 12px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    .nav input {
+      width: 250px;
+      height: 30px;
+      margin-right: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .btn button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .cart {
+      display: flex;
+      align-items: center;
+      margin-left: 15px;
+    }
+
+    .cart a {
+      margin-right: 10px;
+    }
+
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    .swiper {
+      position: relative;
+      top: 30px;
+      width: 90%;
+      height: 60%;
+      margin: auto; /* Center the swiper container */
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .section2,
+    .section3 {
+      display: flex;
+      justify-content: space-evenly;
+      /* border: 2px solid; */
+      margin-top: 40px;
+      align-items: center;
+    }
+
+    .one {
+      /* border: 2px solid; */
+      display: inline-block;
+      width: 300px;
+      height: 350px;
+      background-color: #f6f4f4;
+      position: relative;
+      bottom: 30px;
+      
+    }
+
+    .one img {
+        width: 300px;
+      height: 350px;
+      /* object-fit: cover; */
+    }
+
+    .head1,
+    .head2,
+    .head3 {
+      text-align: center;
+      margin-top: 50px;
+      background-color:rgb(205, 211, 211) ;
+    }
+
+    .head3 {
+      margin-top:24px;
+    }
+
+    .head3 h1 {
+      margin-bottom: 10px;
+    }
+
+    .part1 {
+      /* border: 2px solid; */
+      display: inline-block;
+      width: 150px;
+      height: 90px;
+      background-color: #ccc;
+      margin: 10px;
+    }
+
+    .part1 img {
+      width: 150px;
+      height: 90px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="SpecialOffer.html">Special Offers</a>
+      <a href="clothes.html">Clothes</a>
+      <a href="watches.html">Watches</a>
+      <a href="Shoes.html">Shoes</a>
+      <a href="About.html">About</a>
+      <img src="img/searchbar.png" alt="">
+      <input type="text" placeholder="Search Here">
+      <div class="btn">
+        <button>Search</button>
+      </div>
+      <div class="cart">
+        <a href="#">Cart</a>
+        <img src="img/shopping-cart.png" alt="">
+      </div>
+    </div>
+    <div class="logo">
+      <img src="img/reallogo.jpg" alt="logo">
+    </div>
+  </div>
+
+  <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/banner/1.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner/2.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner/parallax.jpg" alt=""></div>
+      <div class="swiper-slide"><img src="img/banner/3.jpg" alt=""></div>
+      <div class="swiper-slide">Slide 5</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+  <div class="head1">
+    <h1>OUR BEST PRODUCT</h1>
+    <div class="section2">
+      <div class="one">
+        <div class="img">
+          <img src="img/featured/5.jpeg" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/featured/1.jpg" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/featured/3.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="head2">
+    <h1>WATCHES AND CLOTHES</h1>
+    <div class="section2">
+      <div class="one">
+        <div class="img">
+          <img src="img/watches/1.jpg" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/clothes/suit1.jpeg" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/clothes/4.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="head2">
+    <h1>ELECTRONICS</h1>
+    <div class="section3">
+      <div class="one">
+        <div class="img">
+          <img src="img/electronic/Mobiles/mob1.png" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/electronic/laptop/1.jpeg" alt="">
+        </div>
+      </div>
+      <div class="one">
+        <div class="img">
+          <img src="img/electronic/headphone/2.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="head3">
+    <h1>OUR PARTNER</h1>
+    <div class="part1">
+      <img src="img/brand/1.webp" alt="">
+    </div>
+    <div class="part1">
+      <img src="img/brand/2.webp" alt="">
+    </div>
+    <div class="part1">
+      <img src="img/brand/3.webp" alt="">
+    </div>
+    <div class="part1">
+      <img src="img/brand/4.webp" alt="">
+    </div>
+    <div class="part1">
+      <img src="img/brand/5.webp" alt="">
+    </div>
+  </div>
+
+</body>
+
+</html>
